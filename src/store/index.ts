@@ -11,6 +11,9 @@ export default new Vuex.Store({
     addRecipe (state, newRecipe) {
       state.recipes = [newRecipe, ...state.recipes]
     },
+    deleteRecipe(state, recipeToRemove) {
+      state.recipes = state.recipes.filter(recipe => recipe.id !== recipeToRemove.id)
+    }
   },
   actions: {},
   modules: {}
