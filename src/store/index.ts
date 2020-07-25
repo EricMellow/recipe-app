@@ -10,7 +10,7 @@ export default new Vuex.Store({
   mutations: {
     addRecipe (state, newRecipe) {
       state.recipes = [newRecipe, ...state.recipes]
-    }
+    },
   },
   actions: {},
   modules: {}
