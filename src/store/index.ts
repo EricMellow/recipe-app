@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    recipes: [{ id: 1, title: 'First Recipe', ingredients: 'Some food and stuff' }, { id: 2, title: 'Second Recipe', ingredients: 'Some food and stuff' }]
+    recipes: [{ id: 1, title: 'First Recipe', instructions: 'Some food and stuff' }, { id: 2, title: 'Second Recipe', instructions: 'Different instructions' }]
   },
   mutations: {
     addRecipe (state, newRecipe) {

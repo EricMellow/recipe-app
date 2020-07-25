@@ -1,6 +1,5 @@
 <template>
   <div class="add">
-    Create a new recipe
     <input v-model="title" placeholder="title" />
     <textarea v-model="instructions" placeholder="instructions" />
     <button v-on:click="storeRecipe" :disabled="!title || !instructions">
