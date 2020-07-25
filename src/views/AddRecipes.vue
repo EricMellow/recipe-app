@@ -1,17 +1,17 @@
 <template>
-  <div class="home">
-    <Recipes />
+  <div class="add">
+    <AddForm />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Recipes from "@/components/Recipes.vue";
+import AddForm from "@/components/AddForm.vue";
 
 export default {
-  name: "Home",
+  name: "Add",
   components: {
-    Recipes
+    AddForm
   }
 };
 </script>

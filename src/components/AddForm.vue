@@ -1,8 +1,9 @@
 <template>
-  <div class="recipes">
-    <div v-bind:key="recipe.id" v-for="recipe in recipes">
-      {{ recipe.title }}
-    </div>
+  <div class="add">
+    Create a new recipe
+    <input v-model="title" placeholder="title" />
+    <textarea v-model="instructions" placeholder="instructions" />
+    <button v-on:click="storeRecipe">Save Recipe</button>
   </div>
 </template>
 
@@ -10,11 +11,17 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  name: "Recipes",
+  name: "AddForm",
   data() {
     return {
-      recipes: this.$store.state.recipes
+      title: "",
+      instructions: ""
     };
+  },
+  methods: {
+    storeRecipe() {
+      
+    }
   }
 });
 </script>
