@@ -118,4 +118,14 @@ export default {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+
+@media only screen and (max-width: 475px) {
+  .modal-container {
+    width: 75vw;
+  }
+
+  .modal-header {
+    font-size: 1.25rem;
+  }
+}
 </style>

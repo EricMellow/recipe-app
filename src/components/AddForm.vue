@@ -126,11 +126,13 @@ export default Vue.extend({
     min-width: 0;
     height: 250px;
     min-height: 0;
+    font-size: 1rem;
   }
 
   .title {
     min-width: 0;
     width: 80vw;
+    font-size: 1rem;
   }
 
   .success-msg {
