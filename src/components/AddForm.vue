@@ -32,7 +32,7 @@ export default Vue.extend({
     };
   },
   methods: {
-    storeRecipe() {
+    storeRecipe(): void {
       const newRecipe = {
         id: Date.now(),
         title: this.title,
@@ -41,7 +41,7 @@ export default Vue.extend({
       this.$store.commit("addRecipe", newRecipe);
       this.addSuccessful();
     },
-    addSuccessful() {
+    addSuccessful(): void {
       this.title = "";
       this.instructions = "";
       this.showSuccessMessage = true;

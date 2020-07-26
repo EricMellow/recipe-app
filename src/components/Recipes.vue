@@ -56,19 +56,19 @@ export default Vue.extend({
     };
   },
   methods: {
-    openModal(recipe: Recipe) {
+    openModal(recipe: Recipe): void {
       this.modalTitle = recipe.title;
       this.modalBody = recipe.instructions;
       this.modalOpen = !this.modalOpen;
     },
-    filterRecipes() {
+    filterRecipes(): void {
       this.recipes = this.$store.state.recipes
         .filter((recipe: Recipe) =>
           recipe.title.toUpperCase().includes(this.search.toUpperCase())
         )
         .sort((a: Recipe, b: Recipe) => a.title.localeCompare(b.title));
     },
-    deleteRecipe(recipe: Recipe) {
+    deleteRecipe(recipe: Recipe): void {
       this.$store.commit("deleteRecipe", recipe);
       this.recipes = this.$store.state.recipes.sort((a: Recipe, b: Recipe) =>
         a.title.localeCompare(b.title)
