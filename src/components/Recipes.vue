@@ -154,4 +154,29 @@ export default Vue.extend({
   color: #fff;
   min-width: 325px;
 }
+
+@media only screen and (max-width: 400px) {
+  .recipe-container {
+    height: 70vh;
+  }
+
+  .recipe {
+    min-width: 0;
+    width: 80vw;
+  }
+
+  .recipe-title {
+    min-width: 0;
+  }
+
+  .search-bar {
+    min-width: 0;
+    width: 80vw;
+    font-size: 0.8rem;
+  }
+
+  .delete-btn, .view-btn {
+    font-size: 0.8rem;
+  }
+}
 </style>

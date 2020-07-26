@@ -125,6 +125,7 @@ export default Vue.extend({
     width: 80vw;
     min-width: 0;
     height: 250px;
+    min-height: 0;
   }
 
   .title {
