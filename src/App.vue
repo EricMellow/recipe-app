@@ -21,6 +21,7 @@
   padding: 30px;
   background-color: #46424d;
   color: #cbc9cf;
+  margin-bottom: 20px;
 }
 
 #nav a {

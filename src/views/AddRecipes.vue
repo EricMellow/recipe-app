@@ -1,6 +1,6 @@
 <template>
   <div class="add">
-    <h3 style="color: #CBC9CF;">Create a new recipe</h3>
+    <h1 style="color: #CBC9CF;">Create a new recipe</h1>
     <AddForm />
   </div>
 </template>

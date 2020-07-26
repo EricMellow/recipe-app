@@ -1,15 +1,16 @@
 <template>
   <div class="recipes">
     <input
+      class="search-bar"
       v-model="search"
-      placeholder="find your favorite recipe"
+      placeholder="search for your favorite recipe"
       v-on:keyup="filterRecipes"
     />
     <div class="recipe-container">
-      <h5 v-if="!recipes">
+      <h4 v-if="!recipes.length" style="color: #cbc9cf;">
         You don't have any recipes. Click "Add Recipe" above to store your first
         recipe.
-      </h5>
+      </h4>
       <div class="recipe" v-bind:key="recipe.id" v-for="recipe in recipes">
         <button class="view-btn" v-on:click="openModal(recipe)">
           View
@@ -77,7 +78,7 @@ export default Vue.extend({
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 80vh;
+  height: 75vh;
   overflow-y: scroll;
   background-color: #2b2733;
 }
@@ -116,12 +117,12 @@ export default Vue.extend({
 }
 
 .view-btn:hover {
-  background-color: #534a63;
+  background-color: #342e3e;
   cursor: pointer;
 }
 
 .delete-btn:hover {
-  background-color: #534a63;
+  background-color: #342e3e;
   cursor: pointer;
 }
 
@@ -141,5 +142,16 @@ export default Vue.extend({
   align-items: center;
   justify-content: space-between;
   min-width: 140px;
+}
+
+.search-bar {
+  background-color: #46424d;
+  border: none;
+  font-size: 1.5rem;
+  margin: 10px;
+  border-radius: 4px;
+  padding: 10px 10px 10px 10px;
+  color: #fff;
+  min-width: 325px;
 }
 </style>

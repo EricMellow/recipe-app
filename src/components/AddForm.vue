@@ -1,11 +1,21 @@
 <template>
-  <div class="add">
-    <input v-model="title" placeholder="title" />
-    <textarea v-model="instructions" placeholder="instructions" />
-    <button v-on:click="storeRecipe" :disabled="!title || !instructions">
+  <div class="add-form">
+    <input class="title" v-model="title" placeholder="title" />
+    <textarea
+      class="instructions"
+      v-model="instructions"
+      placeholder="instructions"
+    />
+    <button
+      class="save-btn"
+      v-on:click="storeRecipe"
+      :disabled="!title || !instructions"
+    >
       Save Recipe
     </button>
-    <div v-if="showSuccessMessage">Your recipe has been saved</div>
+    <div class="success-msg" v-if="showSuccessMessage">
+      Your recipe has been saved
+    </div>
   </div>
 </template>
 
@@ -45,18 +55,65 @@ export default Vue.extend({
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.add-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 200px;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+.title {
+  background-color: #46424d;
+  border: none;
+  font-size: 1.5rem;
+  margin: 10px;
+  border-radius: 4px;
+  padding: 10px 10px 10px 10px;
+  color: #fff;
+  min-width: 325px;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+.instructions {
+  background-color: #46424d;
+  border: none;
+  font: 400 1.5rem Arial;
+  margin: 10px;
+  border-radius: 4px;
+  padding: 10px 10px 10px 10px;
+  color: #fff;
+  min-width: 325px;
+  min-height: 300px;
 }
-a {
-  color: #42b983;
+
+.save-btn {
+  color: #017fdd;
+  border-radius: 5px;
+  border: none;
+  border: 2px solid #017fdd;
+  font-size: 1rem;
+  padding: 6px;
+  margin: 5px;
+  background-color: #2b2833;
+}
+
+.save-btn:hover {
+  background-color: #222025;
+  cursor: pointer;
+}
+
+.save-btn:disabled {
+  color: #46424d;
+  border: 2px solid #46424d;
+}
+
+.save-btn:disabled:hover {
+  background-color: #2b2833;
+}
+
+.success-msg {
+  color: green;
+  font-size: 1.5rem;
+  margin-top: 10px;
 }
 </style>
