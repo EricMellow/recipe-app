@@ -5,7 +5,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import Recipes from "@/components/Recipes.vue";
 
 export default {

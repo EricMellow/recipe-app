@@ -6,7 +6,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import AddForm from "@/components/AddForm.vue";
 
 export default {
@@ -18,7 +17,7 @@ export default {
 </script>
 
 <style scoped>
-  @media only screen and (max-width: 400px) {
+@media only screen and (max-width: 400px) {
   h1 {
     font-size: 1.5rem;
   }

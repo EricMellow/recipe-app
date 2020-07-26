@@ -33,6 +33,12 @@
 import Vue from "vue";
 import Modal from "@/components/Modal.vue";
 
+interface Recipe {
+  id: Date;
+  title: string;
+  instructions: string;
+}
+
 export default Vue.extend({
   name: "Recipes",
   components: {
@@ -40,7 +46,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      recipes: this.$store.state.recipes.sort((a, b) =>
+      recipes: this.$store.state.recipes.sort((a: Recipe, b: Recipe) =>
         a.title.localeCompare(b.title)
       ),
       modalOpen: false,
@@ -50,21 +56,21 @@ export default Vue.extend({
     };
   },
   methods: {
-    openModal(recipe) {
+    openModal(recipe: Recipe) {
       this.modalTitle = recipe.title;
       this.modalBody = recipe.instructions;
       this.modalOpen = !this.modalOpen;
     },
     filterRecipes() {
       this.recipes = this.$store.state.recipes
-        .filter(recipe =>
+        .filter((recipe: Recipe) =>
           recipe.title.toUpperCase().includes(this.search.toUpperCase())
         )
-        .sort((a, b) => a.title.localeCompare(b.title));
+        .sort((a: Recipe, b: Recipe) => a.title.localeCompare(b.title));
     },
-    deleteRecipe(recipe) {
+    deleteRecipe(recipe: Recipe) {
       this.$store.commit("deleteRecipe", recipe);
-      this.recipes = this.$store.state.recipes.sort((a, b) =>
+      this.recipes = this.$store.state.recipes.sort((a: Recipe, b: Recipe) =>
         a.title.localeCompare(b.title)
       );
     }
@@ -175,7 +181,8 @@ export default Vue.extend({
     font-size: 0.8rem;
   }
 
-  .delete-btn, .view-btn {
+  .delete-btn,
+  .view-btn {
     font-size: 0.8rem;
   }
 }
