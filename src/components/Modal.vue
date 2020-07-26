@@ -15,7 +15,7 @@
             </slot>
           </div>
 
-          <button class="modal-default-button" v-on:click.prevent="close">
+          <button class="close-btn" v-on:click.prevent="close">
             Close
           </button>
         </div>
@@ -65,27 +65,44 @@ export default {
 }
 
 .modal-container {
-  width: 300px;
+  width: 350px;
   margin: 0px auto;
   padding: 20px 30px;
-  background-color: #fff;
-  border-radius: 2px;
+  background-color: #46424d;
+  border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
   font-family: Helvetica, Arial, sans-serif;
+  color: #fff;
 }
 
-.modal-header h3 {
+.modal-header {
   margin-top: 0;
-  color: #42b983;
+  color: #017fdd;
+  font-size: 1.5rem;
 }
 
 .modal-body {
   margin: 20px 0;
+  white-space: pre-line;
+  text-align: justify;
+  font-size: 1rem;
 }
 
-.modal-default-button {
-  float: right;
+.close-btn {
+  color: #017fdd;
+  border-radius: 5px;
+  border: none;
+  border: 2px solid #017fdd;
+  font-size: 1rem;
+  padding: 6px;
+  margin: 5px;
+  background-color: #46424d;
+}
+
+.close-btn:hover {
+  background-color: #342e3e;
+  cursor: pointer;
 }
 
 .modal-enter {

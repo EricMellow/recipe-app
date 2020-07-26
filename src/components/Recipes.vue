@@ -89,7 +89,6 @@ export default Vue.extend({
   padding: 10px;
   border-radius: 3px;
   min-width: 40vw;
-  min-height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,7 +100,8 @@ export default Vue.extend({
 }
 
 .recipe-title {
-  max-width: 315px;
+  max-width: 200px;
+  min-width: 200px;
   margin: 10px;
 }
 

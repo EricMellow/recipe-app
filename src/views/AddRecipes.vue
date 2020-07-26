@@ -16,3 +16,11 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+  @media only screen and (max-width: 400px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+</style>

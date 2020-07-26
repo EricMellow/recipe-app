@@ -115,5 +115,25 @@ export default Vue.extend({
   color: green;
   font-size: 1.5rem;
   margin-top: 10px;
+  border: 2px solid green;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 400px) {
+  .instructions {
+    width: 80vw;
+    min-width: 0;
+    height: 250px;
+  }
+
+  .title {
+    min-width: 0;
+    width: 80vw;
+  }
+
+  .success-msg {
+    width: 80vw;
+  }
 }
 </style>
