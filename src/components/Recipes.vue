@@ -6,12 +6,16 @@
       v-on:keyup="filterRecipes"
     />
     <div class="recipe-container">
+      <h5 v-if="!recipes">
+        You don't have any recipes. Click "Add Recipe" above to store your first
+        recipe.
+      </h5>
       <div class="recipe" v-bind:key="recipe.id" v-for="recipe in recipes">
-        {{ recipe.title }}
-        <button v-on:click="openModal(recipe)">
+        <button class="view-btn" v-on:click="openModal(recipe)">
           View
         </button>
-        <button v-on:click="deleteRecipe(recipe)">
+        <h4 class="recipe-title">{{ recipe.title }}</h4>
+        <button class="delete-btn" v-on:click="deleteRecipe(recipe)">
           Delete
         </button>
       </div>
@@ -75,16 +79,67 @@ export default Vue.extend({
   justify-content: flex-start;
   height: 80vh;
   overflow-y: scroll;
+  background-color: #2b2733;
 }
 
 .recipe {
-  box-shadow: 5px 5px 10px 0px black;
+  box-shadow: 4px 4px 6px 2px #161419;
   margin: 15px;
+  padding: 10px;
   border-radius: 3px;
-  width: 70vw;
+  min-width: 40vw;
   min-height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #46424d;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recipe-title {
+  max-width: 315px;
+  margin: 10px;
+}
+
+.view-btn {
+  color: #017fdd;
+  border-radius: 5px;
+  border: none;
+  border: 2px solid #017fdd;
+  font-size: 1rem;
+  padding: 6px;
+  margin: 5px;
+  background-color: #46424d;
+}
+
+.view-btn:hover {
+  background-color: #534a63;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #534a63;
+  cursor: pointer;
+}
+
+.delete-btn {
+  color: red;
+  border-radius: 5px;
+  border: none;
+  border: 2px solid red;
+  font-size: 1rem;
+  padding: 6px;
+  margin: 5px;
+  background-color: #46424d;
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 140px;
 }
 </style>
