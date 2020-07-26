@@ -1,5 +1,4 @@
-import { shallowMount, createLocalVue } from "@vue/test-utils";
-import AddForm from "@/components/AddForm.vue";
+import { createLocalVue } from "@vue/test-utils";
 import Vuex from 'vuex';
 
 const localVue = createLocalVue()
@@ -30,7 +29,6 @@ describe("AddForm.vue", () => {
       state,
       mutations
     })
-    // wrapper = shallowMount(AddForm, { store, localVue });
   });
 
   describe("addRecipe", () => {
